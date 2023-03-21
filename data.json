@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "title": "Responsive design with Bootstrap",
+      "author": "Jake Spurlock",
+      "description": "Your text",
+      "category": "UX",
+      "image": "https://m.media-amazon.com/images/I/51UNGbXYZhL._SX382_BO1,204,203,200_.jpg",
+      "price": 150
+    },
+    {
+        "id": 2,
+        "title": "HTML - an introduction",
+        "author": "Kris Jamsa",
+        "description": "Your text",
+        "category": "HTML",
+        "image": "https://d1b14unh5d6w7g.cloudfront.net/1449686540.01.S001.LXXXXXXX.jpg?Expires=1679489849&Signature=P5Wx2nheY9wYNjYc42K2k3ubFUPBRh27ONmm6hGZI6ygQ6K4LfdtBhF68QjOc8Y6Pwbal-CwwjOf8hjxsJonzNOY2DfXqDonw7J9QK3CU~7j-CSR6jhvOcWJ4cYZEODXRr-S8bUaq~NelypTJUjlxEcvOhVxqi3fO5s3x~ZKwzk_&Key-Pair-Id=APKAIUO27P366FGALUMQ",
+        "price": 200
+      },
+      {
+        "id": 3,
+        "title": "CSS - an introduction",
+        "author": "Mariam Korks",
+        "description": "Your text",
+        "category": "CSS",
+        "image": "https://m.media-amazon.com/images/I/51WGRkUJlRL._SX260_.jpg",
+        "price": 500
+      },
+      {
+        "id": 4,
+        "title": "JavaScript - an introduction",
+        "author": "Hanna Filip",
+        "description": "Lorem ipsum / or your text",
+        "category": "JavaScript",
+        "image": "https://m.media-amazon.com/images/I/51AKN8FY7qL._SX404_BO1,204,203,200_.jpg",
+        "price": 280
+      }
+  ]

@@ -1,5 +1,5 @@
-import {getJson} from './database.js';
-import {loadShop} from './pages.js';
+// import {getJson} from './database.js';
+import {loadShopPage} from './pages.js';
 
 
 //console.log("Hello!!");
@@ -7,9 +7,11 @@ import {loadShop} from './pages.js';
 // const database = require("./database.js");
 
 
-console.log(await getJson("./data.json"));
+//console.log(await getJson("./data.json"));
 
-document.querySelector("#shop").addEventListener("click", loadShop);
+loadShopPage();
+
+document.querySelector("#shop").addEventListener("click", loadShopPage);
 
 
 

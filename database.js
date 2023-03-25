@@ -1,4 +1,4 @@
-async function getJson(path) {
+async function getJSON(path) {
 
     const rawData = await fetch(path);
     const json = await rawData.json();
@@ -6,6 +6,6 @@ async function getJson(path) {
     return json;
 }
 
-export {getJson};
+export {getJSON};
 //exports = { getJson };
 // module.exports = { getJson, test };

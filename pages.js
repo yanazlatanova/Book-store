@@ -1,12 +1,31 @@
+import {getJSON} from './database.js';
+import {getBookCardHTML} from './modules.js';
 
-function getShopContent() {
-    return `<div class="well well-large"> Hey! You are in the Shop </div>`    
+let booksData = [];
+
+// Create a load method
+async function loadContent() {
+
+    // Get books data 
+    booksData = await getJSON('./data.json');
+    
+    let contentHtml = "";
+    booksData.map((book) => {
+        contentHtml += getBookCardHTML(book);
+    })
+
+    document.querySelector("#books").innerHTML = contentHtml;
 }
 
+function loadShopPage() {
+    // console.log("in main");
+    document.querySelector("main").innerHTML = `
+    <div class="container rounded m2-auto ">
+      <div id="books" class="row text-center mt-2 g-3 flex-row justify-content-center">
+      </div>
+    </div>`;
 
-function loadShop() {
-    document.querySelector("main").innerHTML = getShopContent();
-    //console.log("Yanannana");
+    loadContent()
 }
 
-export {loadShop};
+export { loadShopPage };

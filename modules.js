@@ -10,13 +10,13 @@ const getBookCardHTML = (book) => {
             <h5 class="card-price"> ${book.price} SEK </h5>
         </div>
         <div class="card-body">
-            <a href="#" id="purchase" class="card-link btn btn-primary">ADD TO CART</a>
-            <a href="#" id="popDetail" class="card-link btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#popModal">VIEW</a>            
+            <a href="#" id="purchase" class="card-link btn btn-primary btn-buy" book-id ="${book.id}">ADD TO CART</a>
+            <a href="#" id="popDetail" class="card-link btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-${book.id}">VIEW</a>            
         </div>
     </div>
     </div>
 
-    <div class="modal fade" id="popModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-${book.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -26,15 +26,18 @@ const getBookCardHTML = (book) => {
             <div class="modal-body">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h6 class="card-secondary"> Author: ${book.author} </h6>
-                        <h6 class="card-secondary"> Price: ${book.price} kr </h6>
-                        <h6 class="card-secondary"> Category: ${book.category} </h6>
-                        <h6 class="card-secondary"> Description: ${book.category} </h6>
+                        <div class="col-md-5 text-center">
+                            <img src="${book.image}" alt="" class="float-left rounded d-none d-md-block img-thumbnail">
+                        </div>
+                        <h5 class="card-primary"> ${book.title} </h5>
+                        <p class="card-secondary"> Author: ${book.author} <br/> Category: ${book.category}</p>                        
+                        <h5 class="card-secondary"> Price: ${book.price} kr </h5>
+                        <p class="card-secondary description-content"> ${book.description} </p>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">ADD TO CART</button>
+                <button type="button" class="btn btn-primary btn-buy" book-id ="${book.id}">ADD TO CART</button>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
             </div>
             </div>

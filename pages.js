@@ -16,6 +16,20 @@ async function loadContent() {
 
     // Add html content to the shop page structure
     document.querySelector("#books").innerHTML = contentHtml;
+    
+    
+    
+    //console.log(document.getElementsByClassName("btn-buy"));
+    // console.log(document.querySelectorAll("#purchase"));
+
+    // Add EventListener the ADD TO CART buttons
+    document.querySelectorAll('.btn-buy').forEach(button => {
+    button.addEventListener('click', () => {
+            //const bookId = button.dataset.book;
+            //addToCart(booksArr.find(book => String(book["id"]) === bookId));
+            console.log("Hello");
+        });
+    });
 }
 
 // Loads the Shop page structure
@@ -25,8 +39,9 @@ function loadShopPage() {
       <div id="books" class="row text-center mt-2 g-3 flex-row justify-content-center">
       </div>
     </div>`;
-
+    
     loadContent()
 }
+
 
 export { loadShopPage };

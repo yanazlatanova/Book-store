@@ -12,6 +12,7 @@ import {loadShopPage} from './pages.js';
 loadShopPage();
 
 document.querySelector("#shop").addEventListener("click", loadShopPage);
+//document.getElementsByClassName("btn-buy").addEventListener("click", addItemToCart);
 
 
 

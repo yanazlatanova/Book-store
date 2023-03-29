@@ -1,5 +1,5 @@
 // import {getJson} from './database.js';
-import {loadShopPage} from './pages.js';
+import {loadShopPage} from './shop.js';
 
 
 //console.log("Hello!!");

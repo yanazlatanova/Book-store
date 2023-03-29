@@ -1,5 +1,6 @@
 import {getJSON} from './database.js';
 import {getBookCardHTML} from './modules.js';
+import {addItemToCart} from './cart.js';
 
 let booksData = [];
 
@@ -22,9 +23,13 @@ async function loadContent() {
     //console.log(document.getElementsByClassName("btn-buy"));
     // console.log(document.querySelectorAll("#purchase"));
 
+
+
     // Add EventListener the ADD TO CART buttons
     document.querySelectorAll('.btn-buy').forEach(button => {
     button.addEventListener('click', () => {
+
+        // TO DO
             //const bookId = button.dataset.book;
             //addToCart(booksArr.find(book => String(book["id"]) === bookId));
             console.log("Hello");

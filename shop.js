@@ -1,6 +1,6 @@
-import {getJSON} from './database.js';
-import {getBookCardHTML} from './modules.js';
-import {addItemToCart} from './cart.js';
+import { getJSON } from './database.js';
+import { getBookCardHTML } from './modules.js';
+import { addItemToCart } from './cart.js';
 
 let booksData = [];
 
@@ -9,7 +9,7 @@ async function loadContent() {
 
     // Get books data 
     booksData = await getJSON('./data.json');
-    
+
     let contentHtml = "";
     booksData.map((book) => {
         contentHtml += getBookCardHTML(book);
@@ -17,22 +17,16 @@ async function loadContent() {
 
     // Add html content to the shop page structure
     document.querySelector("#books").innerHTML = contentHtml;
-    
-    
-    
-    //console.log(document.getElementsByClassName("btn-buy"));
-    // console.log(document.querySelectorAll("#purchase"));
-
 
 
     // Add EventListener the ADD TO CART buttons
     document.querySelectorAll('.btn-buy').forEach(button => {
-    button.addEventListener('click', () => {
+        button.addEventListener('click', () => {
 
-        // TO DO
-            //const bookId = button.dataset.book;
-            //addToCart(booksArr.find(book => String(book["id"]) === bookId));
-            console.log("Hello");
+            const bookId = button.dataset.id; // get book id
+            const book = booksData.find(book => String(book.id) === bookId); // get book by id
+            addItemToCart(book); // add the book to the cart
+
         });
     });
 }
@@ -44,7 +38,7 @@ function loadShopPage() {
       <div id="books" class="row text-center mt-2 g-3 flex-row justify-content-center">
       </div>
     </div>`;
-    
+
     loadContent()
 }
 

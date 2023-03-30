@@ -1,5 +1,6 @@
 // import {getJson} from './database.js';
 import {loadShopPage} from './shop.js';
+import {loadCartPage} from './cart.js';
 
 
 //console.log("Hello!!");
@@ -12,6 +13,7 @@ import {loadShopPage} from './shop.js';
 loadShopPage();
 
 document.querySelector("#shop").addEventListener("click", loadShopPage);
+document.querySelector("#cart").addEventListener("click", loadCartPage);
 //document.getElementsByClassName("btn-buy").addEventListener("click", addItemToCart);
 
 

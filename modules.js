@@ -1,3 +1,15 @@
+const getShoppingCartItem = (book) => {
+    return `
+    <tr>
+        <td class="align-middle d-none d-sm-block">
+            <img src="${book.image}" alt="" width: 10px; class="img-thumbnail" width="100">
+        </td>
+        <th scope="row" class="align-middle">${book.title}</th>
+        <td class="align-middle">${book.price}</td>
+        <td class="align-middle">${book.quantity}</td>
+    </tr>`;
+}
+
 const getBookCardHTML = (book) => {
     return `
     <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
@@ -10,7 +22,7 @@ const getBookCardHTML = (book) => {
             <h5 class="card-price"> ${book.price} SEK </h5>
         </div>
         <div class="card-body">
-            <a href="#" id="purchase" class="card-link btn btn-primary btn-buy" book-id ="${book.id}">ADD TO CART</a>
+            <a href="#" id="purchase" class="card-link btn btn-primary btn-buy" data-id ="${book.id}">ADD TO CART</a>
             <a href="#" id="popDetail" class="card-link btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-${book.id}">VIEW</a>            
         </div>
     </div>
@@ -37,7 +49,7 @@ const getBookCardHTML = (book) => {
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-buy" book-id ="${book.id}">ADD TO CART</button>
+                <button type="button" class="btn btn-primary btn-buy" data-id ="${book.id}">ADD TO CART</button>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
             </div>
             </div>
@@ -46,4 +58,4 @@ const getBookCardHTML = (book) => {
     `;
 }
 
-export { getBookCardHTML }
+export { getBookCardHTML, getShoppingCartItem }
